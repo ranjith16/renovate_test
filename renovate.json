@@ -1,1 +1,28 @@
-{}
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "bumpVersion": "patch",
+    "commitMessageTopic": "{{{depName}}}",
+    "prHourlyLimit": 0,
+    "branchPrefix": "{{{depName}}}/",
+    "prTitle": "{{{depName}}}",
+    "platform": "github",
+    "automerge": false,
+    "dependencyDashboardAutoclose": false,
+    "onboarding": true,
+    "rangeStrategy": "update-lockfile",
+    "token": "{{{ RENOVATE_TOKEN }}}",
+    "baseBranches": ["master"],
+    "repositories": ["test/repo"],
+    "enabledManagers": ["poetry", "pip_requirements"],
+    "packageRules": [
+        {
+            "enabled": false,
+            "matchPackageNames": ["*"]
+        }
+    ],
+    "vulnerabilityAlerts": {
+        "enabled": true
+    },
+    "osvVulnerabilityAlerts": true
+}
